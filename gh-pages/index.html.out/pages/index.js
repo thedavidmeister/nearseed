@@ -12,7 +12,7 @@ goog.require('layout.hoplon');
 goog.require('color.data');
 hoplon.core.html.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (){var G__10690 = wheel.stylesheet.hoplon.link("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css");
 var G__10691 = font.hoplon.link();
-var G__10692 = wheel.stylesheet.hoplon.link("main.css");
+var G__10692 = wheel.stylesheet.hoplon.link("/main.css");
 return (hoplon.core.head.cljs$core$IFn$_invoke$arity$3 ? hoplon.core.head.cljs$core$IFn$_invoke$arity$3(G__10690,G__10691,G__10692) : hoplon.core.head.call(null,G__10690,G__10691,G__10692));
 })(),(function (){var G__10693 = cljs.core.cst$kw$css;
 var G__10694 = new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,color.data.background], null);
