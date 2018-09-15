@@ -6,6 +6,7 @@
 
 (h/html
  (h/head
-  (font.hoplon/link))
+  (font.hoplon/link)
+  (wheel.stylesheet.hoplon/link "main.css"))
  (h/body
   "HI"))

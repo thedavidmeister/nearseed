@@ -25,7 +25,8 @@
 
    ; everything else...
    [thedavidmeister/hoplon-elem-lib "0.2.0"]
-   [thedavidmeister/wheel "0.3.6"]])
+   [thedavidmeister/wheel "0.3.6"]
+   [garden "1.3.6"]])
 
 (task-options!
  pom {:project project
@@ -40,12 +41,35 @@
  '[tailrecursion.boot-jetty :refer [serve]]
  '[thedavidmeister.boot-github-pages :refer [github-pages]]
  '[crisptrutski.boot-cljs-test :refer [test-cljs]]
- '[adzerk.bootlaces :refer :all])
+ '[adzerk.bootlaces :refer :all]
+ 'garden.core
+ 'styles.compile)
 
 (bootlaces! version)
 
 (def compiler-options
  {})
+
+; Adapted from https://github.com/martinklepsch/boot-garden
+; Dramatically faster ~15x than the approach with pods which seems to cause CLJS
+; to fully recompile or something...
+(deftask garden
+ "Wraps the garden task provided by boot-garden"
+ [p pretty-print? bool "Pretty print the CSS output."]
+ (with-pre-wrap fileset
+  (let [output-path "main.css"
+        css-var 'styles.compile
+        tmp (tmp-dir!)
+        out (clojure.java.io/file tmp output-path)]
+   (info "Compiling %s...\n" (.getName out))
+   (clojure.java.io/make-parents out)
+   (garden.core/css
+    {:output-to (.getPath out)
+     :pretty-print pretty-print?
+     :vendors ["webkit" "moz"]
+     :auto-prefix #{:transform :box-sizing :opacity :appearance}}
+    (styles.compile/screen))
+   (-> fileset (add-resource tmp) commit!))))
 
 (deftask front-dev
  "Build for local development."
@@ -54,6 +78,7 @@
   (watch)
   (speak)
   (hoplon)
+  (garden)
   (cljs :compiler-options compiler-options)
   (serve :port 8000)))
 
