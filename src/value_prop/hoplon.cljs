@@ -1,13 +1,14 @@
 (ns value-prop.hoplon
  (:require
-  [hoplon.core :as h]))
+  [hoplon.core :as h]
+  color.data))
 
 (defn value-prop
  []
  [
   (h/h1
    :css {:white-space "nowrap"}
-   (logo.hoplon/logo) "NearSeed")
+   "NearSeed")
 
   (h/p
    "Near: easy, journey."
@@ -19,7 +20,9 @@
   (h/h2 "The story")
 
   (h/p "One day, stuck doing something onerous, Dave (consultant, founder) flipped the table.")
-  (h/p "(ノಠ益ಠ)ノ彡┻━┻")
+  (h/p
+   :css {:color color.data/accent}
+   "(ノಠ益ಠ)ノ彡┻━┻")
   (h/p "\"Why is this difficult!?")
   (h/p "\"The freelance lifestyle (and money) is great… until the chores pile up… tracking billables, chasing bureaucrats, presenting well, and diarising events…")
   (h/p "\"Sure, there are cloud tools, integrations and service providers. Researching, configuring then maintaining them all takes hours 😓")
