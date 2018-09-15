@@ -1,0 +1,27 @@
+// Compiled by ClojureScript 1.10.339 {:static-fns true, :optimize-constants true}
+goog.provide('pages.index');
+goog.require('cljs.core');
+goog.require('cljs.core.constants');
+goog.require('hoplon.core');
+goog.require('javelin.core');
+goog.require('font.hoplon');
+goog.require('logo.hoplon');
+goog.require('typography.hoplon');
+goog.require('value_prop.hoplon');
+goog.require('layout.hoplon');
+goog.require('color.data');
+hoplon.core.html.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (){var G__10690 = wheel.stylesheet.hoplon.link("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css");
+var G__10691 = font.hoplon.link();
+var G__10692 = wheel.stylesheet.hoplon.link("main.css");
+return (hoplon.core.head.cljs$core$IFn$_invoke$arity$3 ? hoplon.core.head.cljs$core$IFn$_invoke$arity$3(G__10690,G__10691,G__10692) : hoplon.core.head.call(null,G__10690,G__10691,G__10692));
+})(),(function (){var G__10693 = cljs.core.cst$kw$css;
+var G__10694 = new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$background_DASH_color,color.data.background], null);
+var G__10695 = layout.hoplon.centered.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (){var G__10696 = cljs.core.cst$kw$css;
+var G__10697 = new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$background_DASH_color,color.data.white,cljs.core.cst$kw$padding,"0 20px"], null);
+var G__10698 = layout.hoplon.spacer_COLON_section();
+var G__10699 = value_prop.hoplon.value_prop();
+var G__10700 = layout.hoplon.spacer_COLON_section();
+return (hoplon.core.div.cljs$core$IFn$_invoke$arity$5 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$5(G__10696,G__10697,G__10698,G__10699,G__10700) : hoplon.core.div.call(null,G__10696,G__10697,G__10698,G__10699,G__10700));
+})()], 0));
+return (hoplon.core.body.cljs$core$IFn$_invoke$arity$3 ? hoplon.core.body.cljs$core$IFn$_invoke$arity$3(G__10693,G__10694,G__10695) : hoplon.core.body.call(null,G__10693,G__10694,G__10695));
+})()], 0));
