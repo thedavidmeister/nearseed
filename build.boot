@@ -5,6 +5,7 @@
 
 (set-env!
  :source-paths #{"src"}
+ :resource-paths #{"src"}
  :dependencies
  '[; scaffolding...
    [org.clojure/clojure "1.10.0-alpha8"]
@@ -19,6 +20,7 @@
    [crisptrutski/boot-cljs-test "0.3.5-SNAPSHOT"]
    [adzerk/bootlaces "0.1.13"]
    [com.taoensso/timbre "4.10.0"]
+   [samestep/boot-refresh "0.1.0"]
 
    ; transitive deps...
    [doo "0.1.8"]
@@ -43,7 +45,9 @@
  '[crisptrutski.boot-cljs-test :refer [test-cljs]]
  '[adzerk.bootlaces :refer :all]
  'garden.core
- 'styles.compile)
+ 'styles.compile
+ '[adzerk.boot-reload :refer [reload]]
+ '[samestep.boot-refresh :refer [refresh]])
 
 (bootlaces! version)
 
@@ -78,6 +82,8 @@
   (watch)
   (speak)
   (hoplon)
+  (refresh)
+  (reload)
   (garden)
   (cljs :compiler-options compiler-options)
   (serve :port 8000)))

@@ -4,4 +4,4 @@
 
 (def fonts
  [{:wheel.font/name "Karla"
-   :wheel.font/fallback "medium"}])
+   :wheel.font/variants ["400" "700"]}])
