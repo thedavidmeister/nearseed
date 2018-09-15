@@ -92,6 +92,7 @@
  []
  (comp
   (hoplon)
+  (garden)
   (cljs
    :optimizations :advanced
    :compiler-options compiler-options)))
