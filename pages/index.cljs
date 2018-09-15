@@ -13,7 +13,7 @@
  (h/head
   (wheel.stylesheet.hoplon/link "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css")
   (font.hoplon/link)
-  (wheel.stylesheet.hoplon/link "main.css"))
+  (wheel.stylesheet.hoplon/link "/main.css"))
  (h/body
   :css {:background-color color.data/background}
   (layout.hoplon/centered
