@@ -15,7 +15,7 @@
    (h/br)
    "Seed: life, growth."
    (h/br)
-   "NearSeed: together, potential."))
+   "NearSeed: together, potential.")])
 
   ;; (h/h2 "The story")
 
